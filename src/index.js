@@ -33,9 +33,9 @@ class ReactToPrint extends React.Component {
     if (onBeforePrint) {
       onBeforePrint();
     }
-
-    setTimeout(() => {
-      target.contentWindow.focus();
+    target.contentWindow.focus();
+    
+    setTimeout(() => {  
       target.contentWindow.print();
       this.removeWindow(target);
 
@@ -43,7 +43,7 @@ class ReactToPrint extends React.Component {
         onAfterPrint();
       }
 
-    }, 500);
+    }, 5000);
   }
 
   removeWindow(target) { 
